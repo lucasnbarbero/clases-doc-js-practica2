@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control de Gastos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Control de Gastos Personales</h1>
+      <div class="form-container">
+        <form id="transaction-form">
+          <input
+            type="text"
+            id="transaction-name"
+            placeholder="Nombre de la Transacción"
+            required
+          />
+          <input
+            type="number"
+            id="transaction-amount"
+            placeholder="Monto"
+            required
+          />
+          <select id="transaction-type">
+            <option value="income">Ingreso</option>
+            <option value="expense">Gasto</option>
+          </select>
+          <select id="transaction-category">
+            <option value="" disabled selected>Seleccionar Categoría</option>
+            <optgroup label="Ingreso">
+              <option value="salary">Salario</option>
+              <option value="freelance">Trabajo Freelance</option>
+              <option value="investment">Inversión</option>
+            </optgroup>
+            <optgroup label="Gasto">
+              <option value="rent">Alquiler</option>
+              <option value="groceries">Compras de Supermercado</option>
+              <option value="utilities">Servicios Públicos</option>
+            </optgroup>
+          </select>
+          <button type="submit">Agregar Transacción</button>
+        </form>
+      </div>
+      <div class="transaction-list">
+        <h2>Transacciones</h2>
+        <ul id="transactions"></ul>
+      </div>
+      <div class="total-balance">
+        <h2>Balance: $<span id="balance">0.00</span></h2>
+      </div>
+    </div>
+
+    <div id="notifications"></div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
